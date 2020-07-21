@@ -28,3 +28,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
+      
+    - name: Notify
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: https://google.pl
+        method: 'GET'
